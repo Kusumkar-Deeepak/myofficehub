@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+  <title>PolyTransport</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .container {
+      width: 80%;
+      margin: 50px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registered Users</h1>
+    <table id="userTable">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Username</th>
+          <th>Enrollment No</th>
+          <th>Password</th>
+        </tr>
+      </thead>
+      <tbody id="userData">
+        <!-- User data will be inserted here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Fetch user data from the server and populate the table
+    window.onload = function() {
+      fetchUserData();
+    };
+
+    async function fetchUserData() {
+      try {
+        const response = await fetch('/users'); // Assuming '/users' endpoint returns user data
+        const userData = await response.json();
+
+        const tableBody = document.getElementById('userData');
+        tableBody.innerHTML = ''; // Clear existing table data
+        userData.forEach(user => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${user.email}</td>
+            <td>${user.username}</td>
+            <td>${user.enrollmentNo}</td>
+            <td>${user.passwordConf}</td>
+          `;
+          tableBody.appendChild(row);
+        });
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    }
+  </script>
+</body>
+</html>

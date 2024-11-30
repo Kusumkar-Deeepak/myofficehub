@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - My Office Hub</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/stylesheets/style.css"> <!-- Adjust the path as per your file structure -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom CSS for My Office Hub */
+
+/* Navbar */
+.navbar {
+    background-color: #0d6efd; /* Professional blue background color */
+    padding: 15px 0; /* Add padding to navbar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.navbar-brand {
+    font-family: 'Tilt Neon', sans-serif; /* Neon font for the brand */
+    color: #ffffff; /* White color for brand */
+}
+
+.nav-link {
+    color: #ffffff !important; /* White color for navbar links */
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.nav-link:hover {
+    color: #ffc107 !important; /* Yellow color on hover */
+}
+
+/* About Section */
+.about-section {
+    background-color: #f8f9fa; /* Light grey background color */
+    padding: 50px 0;
+}
+
+.about-section h3 {
+    color: #343a40; /* Dark grey color for section headings */
+}
+
+.about-section p {
+    color: #6c757d; /* Medium grey color for paragraph text */
+}
+
+/* Footer */
+.footer {
+    background-color: #343a40; /* Dark grey background color for footer */
+    color: #ffffff; /* White color for footer text */
+    padding: 30px 0; /* Add padding to footer */
+}
+
+/* Hover Animation for Navbar Links */
+.nav-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #ffc107; /* Yellow color */
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Animation for Navbar Toggler Icon */
+.navbar-toggler-icon {
+    animation: navbarTogglerAnim 2s infinite alternate;
+}
+
+@keyframes navbarTogglerAnim {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Interactive Button */
+.btn {
+    background-color: #ffc107; /* Yellow background color for buttons */
+    color: #ffffff; /* White text color for buttons */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Add border radius */
+    transition: background-color 0.3s; /* Smooth transition for background color change */
+}
+
+.btn:hover {
+    background-color: #ffaa00; /* Darker yellow color on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+/* Animation for Interactive Button */
+.btn {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.05); /* Increase button size on hover */
+}
+
+    </style>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand fs-2" href="#"><span>M</span>y Office Hub</a>
+        <!-- Navbar toggler -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#teams">Teams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#reviews">Reviews</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+<!-- About Section -->
+<section class="about-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h2 class="mb-4">About Us</h2>
+                <p class="lead">Welcome to My Office Hub, where innovation meets excellence in college administration solutions. We pride ourselves on being at the forefront of revolutionizing how educational institutions manage their operations efficiently and effectively.</p>
+                <p class="lead">Our comprehensive suite of services ensures that institutions can streamline their administrative tasks, optimize student management, and enhance the overall learning experience.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="mt-5">Our Mission</h3>
+                <p class="text-secondary">At My Office Hub, our mission is clear: to empower educational institutions with cutting-edge technology solutions that enhance the learning experience for students and facilitate seamless administrative processes for faculty and staff.</p>
+                <p class="text-secondary">We are dedicated to providing innovative tools and services that enable institutions to thrive in today's digital age.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="mt-5">How to Use My Office Hub</h3>
+                <p class="text-secondary">Get started with My Office Hub by following these simple steps:</p>
+                <ol class="text-secondary">
+                    <li>Log in to your account using your credentials.</li>
+                    <li>Explore the dashboard to access various features and services.</li>
+                    <li>For student management, utilize PolyStudentia developed by Vedant Patil.</li>
+                    <li>Generate bonafide certificates swiftly using Tech Bonafide developed by Rushikesh Karlekar.</li>
+                    <li>Manage documents effortlessly with PolyDocLink developed by Chintalwad Vaibhav.</li>
+                    <li>Optimize bus management with PolyTransport developed by Kusumkar Deepak.</li>
+                </ol>
+                <p class="text-secondary">With My Office Hub, institutions can revolutionize their administrative processes and empower their staff and students with efficient tools and services.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="mt-5">Our Team</h3>
+                <p class="text-secondary">Meet the dedicated individuals behind My Office Hub:</p>
+                <ul class="text-secondary">
+                    <li>Vedant Patil - Team Leader & Developer</li>
+                    <li>Rushikesh Karlekar - Developer</li>
+                    <li>Chintalwad Vaibhav - Developer</li>
+                    <li>Kusumkar Deepak - Lead Developer & Designer</li>
+                </ul>
+                <p class="text-secondary">Our team combines expertise in software development, design, and project management to deliver high-quality solutions tailored to the needs of educational institutions.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="mt-5">Contact Us</h3>
+                <p class="text-secondary">For any inquiries or assistance, feel free to reach out to us:</p>
+                <ul class="text-secondary">
+                    <li>Email: info@myofficehub.com</li>
+                    <li>Phone: +1 (123) 456-7890</li>
+                </ul>
+                <p class="text-secondary">We are committed to providing exceptional support and guidance to our clients, ensuring they receive the assistance they need to maximize the benefits of My Office Hub.</p>
+                <p class="text-secondary">Visit our headquarters:</p>
+                <address class="text-secondary">
+                    123 Main Street<br>
+                    Cityville, State, Zip<br>
+                    Country
+                </address>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="mt-5">Our Partners</h3>
+                <p class="text-secondary">We collaborate with leading technology providers to deliver innovative solutions to our clients:</p>
+                <div class="partners">
+                    <img src="partner1.png" alt="Partner 1">
+                    <img src="partner2.png" alt="Partner 2">
+                    <img src="partner3.png" alt="Partner 3">
+                    <!-- Add more partner logos as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Section End -->
+
+
+<!-- Footer -->
+<footer class="footer mt-5 py-3 bg-dark text-white text-center">
+    <div class="container">
+        <span class="fs-5">&copy; 2024 My Office Hub. All rights reserved.</span>
+    </div>
+</footer>
+<!-- Footer End -->
+
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+
+
+body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  #options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #333333;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f9f9f9;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  #pdf-viewer {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #cccccc;
+  }
+  
+  /* 1 */
+  body {
+    font-family: sans-serif;
+    background-color: #ffffff;
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  #options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    color: #333333;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #f9f9f9;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+  
+  input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  #pdf-viewer {
+    width: 100%;
+    height: 500px;
+    border: 1px solid #cccccc;
+  }
+  
+  body {
+    background-color: #fafafa;
+  }
+  
+  h1 {
+    color: #333333;
+  }
+  
+  button {
+    background-color: #333333;
+    color: #ffffff;
+  }
+  
+  input {
+    border-color: #cccccc;
+  }
+  
+  #pdf-viewer {
+    border-color: #cccccc;
+  }
+  button {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  body {
+    background-image: url('https://img.freepik.com/premium-photo/documents-achieves-paper-files-searching-information-work-desk-home-office_43157-4809.jpg?size=626&ext=jpg');
+    background-size: cover;
+  }
+  
+  button, input {
+    border-radius: 5px;
+  }
+  #view-pdf-form{
+    align-items: center;
+  }
+  #upload-pdf-form{
+    align-items: center;
+  }
+/* ebyhgxjhch */
+/* Style the navbar container */
+#navbar {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style the navbar buttons */
+#navbar button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 4px;
+  cursor: pointer;
+}
+
+/* Style the active navbar button */
+#navbar button.active {
+  background-color: #28a745;
+  color: white;
+}
+

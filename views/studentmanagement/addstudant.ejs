@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/addstudant.css">
+</head>
+<body>
+    <!-- <form action="/submit" method="post" class="addstudantform">
+        <input type="text" name="username"> 
+        enter email <input type="text" name="email"> 
+        enter age <input type="number" name="age"> 
+        <input type="submit" value="submit">
+       </form> 
+        -->
+
+        <!-- Your existing HTML code -->
+
+
+
+
+<div class="form-container">
+  <div class="form-header">
+    <h2>Student Information Form</h2>
+  </div>
+  <div class="form-body">
+    <form action="/submit" method="post">
+      <div class="form-group">
+        <label for="firstName">Enter Student First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="middleName">Enter Student Middle Name:</label>
+        <input type="text" id="middleName" name="middleName">
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Enter Student Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rollNumber">Enter Roll Number:</label>
+        <input type="text" id="rollNumber" name="rollNumber" required>
+      </div>
+
+      <div class="form-group">
+        <label for="enrollmentNumber">Enter Enrollment Number:</label>
+        <input type="text" id="enrollmentNumber" name="enrollmentNumber" required>
+      </div>
+      <div class="form-group">
+        <label for="enrollmentNumber">Enter Student Email:</label>
+        <input type="text" id="enrollmentNumber" name="email" required>
+      </div>
+       
+      <div class="form-group">
+        <label for="address">Enter Student Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Enter Student year:</label>
+        <select name="year" id="year" >
+          <option value="">select year</option>
+          <option value="1st">first year</option>
+          <option value="2nd">second year</option>
+          <option value="3rd">third year</option>
+        </select>
+      </div>
+
+      <div id="marks-fields">
+        <!-- Marks fields will be dynamically added here -->
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="address">Enter Student totalFees:</label>
+        <textarea id="address" name="totalFees" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="address">Enter Student totalFeesPaid:</label>
+        <textarea id="address" name="totalFeesPaid" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="address">Enter Student totalFeesRemained:</label>
+        <textarea id="address" name="totalFeesRemained" rows="4" required></textarea>
+      </div> -->
+     
+
+      
+      <!-- <div class="form-group">
+        <label for="file">Upload Student Photo:</label>
+        <input type="file" id="studantpassportphoto" name="studantpassportphoto" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label for="file">Upload Student adhar card:</label>
+        <input type="file" id="studantadhar" name="studantadhar" accept="image/*">
+      </div>
+
+      <div class="form-group">
+        <label for="file">Upload father adhar card :</label>
+        <input type="file" id="fatheradhar" name="fatheradhar" accept="image/*">
+      </div> -->
+ 
+
+      <!-- Add other 12 fields as needed -->
+
+      <div class="form-group">
+        <button type="submit" >Submit</button>
+        <button type="reset">reset</button>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="btn">
+  <a href="excelupload"> <button type="button" >add excel file</button></a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  const yearSelect = document.getElementById('year');
+  const marksFields = document.getElementById('marks-fields');
+
+  yearSelect.addEventListener('change', function() {
+    const selectedYear = yearSelect.value;
+    marksFields.innerHTML = ''; // Clear existing fields
+
+    let numSemesters;
+    if (selectedYear === '1st') {
+      numSemesters = 2;
+    } else if (selectedYear === '2nd') {
+      numSemesters = 4;
+    } else if (selectedYear === '3rd') {
+      numSemesters = 6;
+    }
+
+    for (let i = 1; i <= numSemesters; i++) {
+      const label = document.createElement('label');
+      label.textContent = `Enter marks for semester ${i}:`;
+
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = `semester_${i}_marks`; // Assigning appropriate names
+
+      marksFields.appendChild(label);
+      marksFields.appendChild(input);
+      marksFields.appendChild(document.createElement('br'));
+    }
+  });
+});
+
+
+</script>
+</body>
+</html>

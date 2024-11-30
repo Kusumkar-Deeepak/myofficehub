@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: 'Montserrat', sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+            }
+    
+            .certificate-container {
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                max-width: 600px;
+                position: relative;
+                /* Added position:relative to .certificate-container */
+            }
+    
+            .certificate-header {
+                margin-bottom: 10px;
+            }
+    
+            .certificate-header h6,
+            .certificate-header h3,
+            .certificate-header p {
+                margin: 0;
+                padding: 0;
+            }
+    
+            .certificate-header h6 {
+                color: #333;
+            }
+    
+            .certificate-header h3 {
+                margin-top: 5px;
+                color: #333;
+            }
+    
+            .certificate-header p {
+                font-size: 14px;
+                color: #555;
+            }
+    
+            .contact-details p {
+                margin: 5px 0;
+                font-size: 14px;
+                color: #555;
+            }
+    
+            .contact-details hr {
+                margin: 10px 0;
+                border: 1px solid #ddd;
+            }
+    
+            .bonafide-content {
+                margin-bottom: 20px;
+            }
+    
+            .bonafide-content p {
+                margin: 5px 0;
+                font-size: 16px;
+                color: #333;
+            }
+    
+            .date-section {
+                display: flex;
+                justify-content: flex-end;
+                margin-top: -10px;
+                /* Adjust the margin as needed */
+            }
+    
+            .date-section p {
+                margin: 5px 0;
+                font-size: 14px;
+                color: #555;
+            }
+    
+            .signature-section {
+                display: flex;
+                justify-content: space-between;
+            }
+    
+            .signature-section p {
+                margin: 5px 0;
+                font-size: 14px;
+                color: #555;
+                white-space: nowrap;
+                /* Add this property to prevent line break */
+            }
+    
+            #button {
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 20px; /* Adjust the bottom value as needed */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3498db; 
+    color: #fff; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+        </style>
+        <title>Certificate</title>
+    </head>
+<body>
+
+    <div class="certificate-container">
+
+        <div class="certificate-header">
+            <h6>VAPM | Account Software</h6>
+            <img src="/images/vapm_logo.png" height="auto" width="70px">
+            <img src="/images/nba.png" height="70px" width="100px">
+            <h3>Vishweshwarayya Abhiyantriki Padvika Mahavidyalaya</h3>
+            <p>Shri Vishweshwar Shikshan Prasarak Mandal's, Dilip Nagar, Almala Tq. Ausa Dist. Latur - 413556 (M.S.)</p>
+            <p>Approved AICTE New Delhi, Affiliated to MSBTE Mumbai.</p>
+            <p>Accredited by National Board of Accreditation (N.B.A.), New Delhi</p>
+        </div>
+
+        <div class="contact-details">
+            <p>Phone No. 02383-225440 | Fax No. 02383-225600</p>
+            <p>E-mail ID: vishpoly@gmail.com | Website: www.vapmalmala.com</p>
+            <hr>
+        </div>
+
+        <div class="date-section">
+            <p>Date: <%= certificateData.issueDate %></p>
+        </div>
+
+        <div class="bonafide-content">
+            <h1 style="font-size: 34px;">BONAFIDE CERTIFICATE</h1>
+            <!-- Add the image tag below with the correct source (src) attribute -->
+            <!-- Display the image if imageData exists and is valid -->
+<% if (certificateData.imageData) { %>
+    <img src="<%= certificateData.imageData %>" alt="Student Image" style="max-width: 100%; height: auto;">
+<% } else { %>
+    <!-- Provide a placeholder image or fallback text if imageData is missing or invalid -->
+    <p>No image available</p>
+<% } %>
+
+        
+            <p style="font-size: 20px;">
+                <% if (certificateData.title === 'Shri') { %>
+                    This is to certify that Shri. <%= certificateData.studentName %> was a bonafide student
+                <% } else if (certificateData.title === 'Miss') { %>
+                    This is to certify that Miss. <%= certificateData.studentName %> was a bonafide student
+                <% } %>
+        
+                <% if (certificateData.isWas === 'Is') { %>
+                    of this college 
+                <% } else if (certificateData.isWas === 'Was') { %>
+                    of this college 
+                <% } %>
+        
+                Studying diploma in <%= certificateData.course %> THIRD YEAR for the academic year <%= certificateData.academicYear %>. His/her date of birth is <%= certificateData.dob %> as per College record.
+        
+                <!-- Uncomment and customize additional fields as needed -->
+                <!-- <p style="font-size: 16px;">Section: <%= certificateData.section %></p>
+                <p style="font-size: 16px;">Enrollment Number: <%= certificateData.enrollmentNumber %></p> -->
+        
+                <!-- Add more fields as needed -->
+            </p><br><br><br><br><br><br>
+        </div>
+        
+        
+        
+        
+        <div class="signature-section">
+            <p>Section Clerk</p>
+            <p>Principal</p>
+        </div>
+
+    </div>
+<br><br><br>                
+     <div id="button">
+        <button onclick="" id="downloadBtn">Download As A PDF !!</button>
+     </div>
+     <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+
+<!-- Inside your EJS template -->
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', function () {
+        const studentName = '<%= student.name %>';
+        const content = document.querySelector('.certificate-container');
+        const options = {
+            margin: 10,
+            filename: `${studentName}_certificate.pdf`, // Set filename dynamically
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+
+        html2pdf()
+            .from(content)
+            .set(options)
+            .save();
+    });
+</script>
+</body>
+</html>

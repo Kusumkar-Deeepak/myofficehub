@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Your existing head content -->
+</head>
+<body>
+  <h1>Document Manager</h1>
+  <form action="/view-documents" method="post">
+    <label for="enrollmentNo">Enrollment No:</label>
+    <input type="text" id="enrollmentNo" name="enrollmentNo" required>
+    <button type="submit">View Documents</button>
+  </form>
+
+  <% if (documents && documents.length > 0) { %>
+    <h2>Documents:</h2>
+    <ul>
+      <% documents.forEach(document => { %>
+        <li>
+          <%= document.documentName %> - <%= document.documentType %>
+          <a href="/download/<%= document._id %>">Download</a>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else if (documents !== undefined) { %>
+    <p>No documents found for the given enrollment number.</p>
+  <% } %>
+</body>
+</html>

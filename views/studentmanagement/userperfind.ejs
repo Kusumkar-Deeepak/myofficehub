@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks Graph</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include custom CSS -->
+    <link rel="stylesheet" href="/styles.css">
+<style>
+    canvas {
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .chart-container {
+        position: relative;
+        margin: auto;
+        height: 80vh; /* Adjust height as needed */
+        width: 80vw; /* Adjust width as needed */
+    }
+
+    .chart {
+        animation: animate 1s ease-out;
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+</head>
+<body>
+   <center><h1>Student Marks Graph</h1></center> 
+   
+
+    <% if (typeof studentData !== 'undefined' && studentData) { %>
+                 <div class="student-details">
+                    <center>
+                        <p id="p"><strong>Name:</strong> <%= studentData.firstName || '' %> <%= studentData.middleName || '' %> <%= studentData.lastName || '' %></p>
+
+                    </center>
+            
+                   <!-- Add more fields as needed -->
+</div>
+<canvas id="marksChart" width="800" height="400"></canvas>    
+   
+    
+    <script>
+        // JavaScript code to render the graph dynamically
+        const studentMarks = {
+            semester_1_marks: <%= studentData.semester_1_marks  || 0 %>,
+            semester_2_marks: <%= studentData.semester_2_marks || 0 %>,
+            semester_3_marks: <%= studentData.semester_3_marks || 0 %>,
+            semester_4_marks: <%= studentData.semester_4_marks || 0 %>,
+            semester_5_marks: <%= studentData.semester_5_marks || 0 %>,
+            semester_6_marks: <%= studentData.semester_6_marks || 0 %>
+        };
+
+        // Get the canvas element
+        const ctx = document.getElementById('marksChart').getContext('2d');
+
+        // Create the chart
+        const marksChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Semester 1', 'Semester 2', 'Semester 3', 'Semester 4', 'Semester 5', 'Semester 6'],
+                datasets: [{
+                    label: 'Marks',
+                    data: [
+                        studentMarks.semester_1_marks,
+                        studentMarks.semester_2_marks,
+                        studentMarks.semester_3_marks,
+                        studentMarks.semester_4_marks,
+                        studentMarks.semester_5_marks,
+                        studentMarks.semester_6_marks
+                    ],
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+     <% } %>
+</body>
+</html>
+

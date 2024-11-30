@@ -1,0 +1,185 @@
+/*body,
+ table,
+    thead,
+    tr,
+    tbody,
+    th,
+    td {
+        text-align: center;
+    }*/
+body{
+	text-align: center !important;
+}
+p{
+	margin-top: 20px;
+	font-size: 30px;
+}
+input{
+	text-align: center;
+}
+.mssg{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+@media screen and (max-width: 400px) {
+    /*body,
+     table,
+        thead,
+        tr,
+        tbody,
+        th,
+        td {
+            text-align: center;
+        }*/
+    body{
+    	text-align: center !important;
+    }
+    p{
+    	margin-top: 20px;
+    	font-size: 30px;
+    }
+    input{
+    	text-align: center;
+    }
+    .mssg{
+    	margin-top: 5px;
+    	margin-bottom: 5px;
+    	border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 720px) {
+    /*body,
+     table,
+        thead,
+        tr,
+        tbody,
+        th,
+        td {
+            text-align: center;
+        }*/
+    body{
+    	text-align: center !important;
+    }
+    p{
+    	margin-top: 20px;
+    	font-size: 30px;
+    }
+    input{
+    	text-align: center;
+    }
+    .mssg{
+    	margin-top: 5px;
+    	margin-bottom: 5px;
+    	border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 721px) and (max-width: 1280px) {
+    /*body,
+     table,
+        thead,
+        tr,
+        tbody,
+        th,
+        td {
+            text-align: center;
+        }*/
+    body{
+    	text-align: center !important;
+    }
+    p{
+    	margin-top: 20px;
+    	font-size: 30px;
+    }
+    input{
+    	text-align: center;
+    }
+    .mssg{
+    	margin-top: 5px;
+    	margin-bottom: 5px;
+    	border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 1281px) and (max-width: 1440px) {
+    /*body,
+     table,
+        thead,
+        tr,
+        tbody,
+        th,
+        td {
+            text-align: center;
+        }*/
+    body{
+    	text-align: center !important;
+    }
+    p{
+    	margin-top: 20px;
+    	font-size: 30px;
+    }
+    input{
+    	text-align: center;
+    }
+    .mssg{
+    	margin-top: 5px;
+    	margin-bottom: 5px;
+    	border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 1441px) and (max-width: 1920px) {
+    /*body,
+     table,
+        thead,
+        tr,
+        tbody,
+        th,
+        td {
+            text-align: center;
+        }*/
+    body{
+    	text-align: center !important;
+    }
+    p{
+    	margin-top: 20px;
+    	font-size: 30px;
+    }
+    input{
+    	text-align: center;
+    }
+    .mssg{
+    	margin-top: 5px;
+    	margin-bottom: 5px;
+    	border-radius: 5px;
+    }
+}
+
+@media screen and (min-width: 1921px) {
+    /*body,
+     table,
+        thead,
+        tr,
+        tbody,
+        th,
+        td {
+            text-align: center;
+        }*/
+    body{
+    	text-align: center !important;
+    }
+    p{
+    	margin-top: 20px;
+    	font-size: 30px;
+    }
+    input{
+    	text-align: center;
+    }
+    .mssg{
+    	margin-top: 5px;
+    	margin-bottom: 5px;
+    	border-radius: 5px;
+    }
+}

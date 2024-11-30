@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolyTransport</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .footer {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem; 
+}
+
+    .feedback-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .feedback-item {
+      width: calc(50% - 20px);
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+      border-radius: 5px;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .feedback-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .feedback-item p {
+      margin: 5px 0;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+      transition: color 0.3s;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    h1:hover {
+      color: #f00;
+    }
+
+    @media only screen and (max-width: 768px) {
+      .feedback-item {
+        width: calc(100% - 20px);
+      }
+    }
+    .delete-button {
+      background-color: #f44336;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .delete-button:hover {
+      background-color: #d32f2f;
+    }
+    header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        /* CSS for star icon */
+.star-icon {
+  color: gold; /* Set star color */
+  font-size: 1.2em; /* Adjust star size */
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1 style="color: white;">All FeedBack - PolyTransport</h1>
+    </header>
+<div class="feedback-container">
+  <% if (feedbackData && feedbackData.length > 0) { %>
+    <% feedbackData.forEach(feedback => { %>
+      <div class="feedback-item">
+        <p><strong>Name:</strong> <%= feedback.name %></p>
+        <p><strong>Class:</strong> <%= feedback.className %></p>
+        <p><strong>Roll No:</strong> <%= feedback.rollNo %></p>
+        <p><strong>Feedback:</strong> <%= feedback.feedback %></p>
+        <!-- <p><strong>Rating:</strong> <%= feedback.rating %></p> -->
+        <p><strong>Rating:</strong>
+          <!-- Generate star icons based on the feedback rating -->
+          <% for (let i = 0; i < feedback.rating; i++) { %>
+            <span class="star-icon">&#9733;</span> <!-- Unicode for star icon -->
+          <% } %>
+        </p>
+        <button class="delete-button" onclick="confirmDelete('<%= feedback._id %>')">Delete</button>
+      </div>
+    <% }); %>
+  <% } else { %>
+    <p>No feedback available.</p>
+  <% } %>
+</div>
+<hr>
+    <div class="footer">
+        <p>&copy; 2023 PolyTransport. All rights reserved.<br>
+            -By Kusumkar Deepak Prakash <!-- &#128540; -->
+        </p>
+    </div>
+
+  <script>
+    document.addEventListener('keydown', function (e) {
+      // Check if the user pressed Ctrl+U
+      if (e.ctrlKey && e.key === 'u') {
+        // Prevent the default action (viewing page source)
+        e.preventDefault();
+        alert('Source Code Nahi milega bhai!!.');
+      }
+    });
+    
+     // Function to confirm feedback deletion
+     function confirmDelete(feedbackId) {
+    var confirmDelete = confirm('Are you sure you want to delete this feedback?');
+
+    if (confirmDelete) {
+      deleteFeedback(feedbackId);
+    }
+  }
+
+  // Function to send delete request
+  function deleteFeedback(feedbackId) {
+    fetch(`/deleteFeedback/${feedbackId}`, {
+      method: 'DELETE',
+    })
+    .then(response => {
+      if (response.ok) {
+        // Reload the page or update the UI as needed
+        location.reload(); // This will reload the page, adjust as needed
+      } else {
+        console.error('Failed to delete feedback');
+        // Handle error cases if needed
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      // Handle error cases if needed
+    });
+  }
+  </script>
+</body>
+</html>

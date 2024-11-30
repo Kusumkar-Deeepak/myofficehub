@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Bus System</title>
+    <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+    <link rel="stylesheet" href="/stylesheets/documentmanagement/doc.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+
+    <!-- <style>
+        /* Custom CSS to prevent text wrapping */
+        .btn-single-line {
+            white-space: nowrap;
+        }
+        
+    </style> -->
+</head>
+
+<body>
+
+
+
+
+
+    <div class="navbar">
+        <div class="container">
+            <img src="/images/logo-no-background.png" alt="Student Bus Information" width="70rem">
+            <a class="brand" href="/home">Document Manager</a>
+            <div class="menu">
+                <div class="dropdown">
+                    <button class="dropbtn" id="menuBtn">
+                        <img width="24" height="24" src="https://img.icons8.com/android/24/FFFFFF/menu.png"
+                            alt="menu" />
+                    </button>
+                    <div class="dropdown-content" id="menuContent">
+                        <a href="/">Home</a>
+                        <button class="close-btn" onclick="closeMenu()">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news-container">
+        <div class="title">
+            Update
+        </div>
+
+        <ul>
+            <!-- <li>
+                Welcome To Document Manager !
+            </li> -->
+
+            <li>
+                Introducing a Seamless User Integration Experience !
+            </li>
+
+            <li>
+                <b>Explore Our Menu's 'Add User' Option for Effortless Profile Inclusion !</b>
+            </li>
+        </ul>
+    </div>
+    <br><br>
+    <h3 id="Welcome">Welcome To Document Manager !</h3><br>
+    <div class="main">
+
+        <div class="module" id="module1">
+            <h2>Add Student Document</h2>
+            <img src="/images/doc.jpeg" alt="Student Bus Information" width="300rem">
+            <p id="mod1info">The module facilitates document management by allowing users to seamlessly add, organize, and
+                manage documents within a system. Users can easily upload, categorize, search, and access documents,
+                streamlining document-centric workflows. Additionally, it offers features for version control, collaboration,
+                and permissions management to ensure efficient document handling. With this module, businesses can enhance
+                productivity and organization while optimizing document-centric processes.</p>
+            <a href="/adddoc"><input type="button" value="Use This!" id="mod1but"></a>
+        </div>
+        <div class="module2" id="module2">
+            <h2>Document Manager</h2>
+            <img src="/images/payment Manage.jpg" alt="Student Payment Management" width="300rem">
+            <p id="mod2info">Module 2 focuses on efficient payment management for bus services. Users can input their
+                name, class, bus stop, and enrollment details, along with uploading a photo. The "Make Payment" button
+                initiates a secure payment process. The module ensures a user-friendly experience, with clear form
+                fields and prompts. It enhances user convenience by centralizing payment activities, promoting
+                transparency, and contributing to the overall effectiveness of the Document Manager system.</p>
+            <input type="button" value="Use This!" id="mod2but">
+        </div>
+    </div>
+
+
+    <hr>
+    <div class="footer">
+        <p>&copy; 2023-24 Document Manager. All rights reserved.<br>
+            -By Chintalwad Vaibhav Dhondiram <!-- &#128540; -->
+        </p>
+    </div>
+
+    <script src="/javascripts/documentmanagement/doc.js"></script>
+    <script>
+        //  document.addEventListener('keydown', function (e) {
+        // Check if the user pressed Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, or F12
+        //   if (
+        //     (e.ctrlKey && e.key === 'u') ||
+        //     (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) ||
+        //     (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) ||
+        //     e.key === 'F12'
+        //   ) {
+        // Prevent the default action (viewing page source or opening DevTools)
+        //     e.preventDefault();
+        //     alert('Source Code Nahi milega bhai!!.');
+        //   }
+        // });
+
+
+    </script>
+    <script src="/javascripts/documentmanagement/doc.js"></script>
+</body>
+
+</html>

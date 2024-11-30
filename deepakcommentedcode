@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/stylesheets/busmanagement/main.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+    
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+        }
+    
+        .form-container {
+            margin-top: 100px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 30px;
+            background-color: white;
+        }
+    
+        p {
+            font-family: fantasy;
+        }
+    
+        .form-group {
+            margin-bottom: 20px;
+        }
+    
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+    
+        .btn-success {
+            width: 100%;
+        }
+    
+        .mssg {
+            margin-bottom: 20px;
+        }
+    
+        .bg-danger {
+            color: red;
+        }
+    
+        #check {
+            color: red;
+        }
+    
+        a {
+            color: blue;
+        }
+    
+        .button-container {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .btn {
+            --color: #2980b9;
+            --color2: rgb(10, 25, 30);
+            padding: 0.5em 1em;
+            background-color: transparent;
+            border-radius: 6px;
+            border: .3px solid var(--color);
+            transition: .5s;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            z-index: 1;
+            font-weight: 300;
+            font-size: 14px;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;
+            text-transform: uppercase;
+            color: var(--color);
+            width: 120px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .btn::after,
+        .btn::before {
+            content: '';
+            display: block;
+            height: 100%;
+            width: 100%;
+            transform: skew(90deg) translate(-50%, -50%);
+            position: absolute;
+            inset: 50%;
+            left: 25%;
+            z-index: -1;
+            transition: .5s ease-out;
+            background-color: var(--color);
+        }
+    
+        .btn::before {
+            top: -50%;
+            left: -25%;
+            transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+        }
+    
+        .btn:hover::before {
+            transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+        }
+    
+        .btn:hover::after {
+            transform: skew(45deg) translate(-50%, -50%);
+        }
+    
+        .btn:hover {
+            color: var(--color2);
+        }
+    
+        .btn:active {
+            filter: brightness(.7);
+            transform: scale(.98);
+        }
+    
+        @media only screen and (max-width: 768px) {
+    .form-container {
+        margin-top: 500px; /* Adjusted margin for smaller screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+    </style>
+        
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 form-container">
+                <div>
+                    <p>Student Register</p><br>
+                </div>
+                <div class="form-group">
+                    <form id="form1" method="post">
+                        <input type="email" name="email" placeholder="E-mail" required="" class="form-control"><br/>
+                        <input type="text" name="username" placeholder="Username" required="" class="form-control"><br/>
+                        <input type="text" name="enrollmentNo" placeholder="Enrollment Number" required="" class="form-control"><br/>
+                        <input type="password" name="password" placeholder="Password" required="" class="form-control"><br/>
+                        <input type="password" name="passwordConf" placeholder="Confirm Password" required="" class="form-control"><br/>
+                        <!-- <input type="submit" value="Register" class="btn btn-success"> -->
+                        <!-- <button type="submit" class="btn"> Register </button> -->
+                        <div class="button-container">
+                            <input type="submit" value="Register" class="btn btn-success">
+                        </div>
+                    </form>
+                </div>
+                <div class="mssg bg-danger">
+                    <span id="check"></span>
+                </div>
+                <div>
+                    <span>Already Registered! <a href="/log">Login</a></span>
+                </div>
+                <div id="LangTable"><a href="/log" id="aa"></a></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $('#form1').submit(function(event) {
+                event.preventDefault();
+                var formData = {
+                    email: $('input[name=email]').val(),
+                    username: $('input[name=username]').val(),
+                    enrollmentNo: $('input[name=enrollmentNo]').val(), // No need to convert to integer
+                    password: $('input[name=password]').val(),
+                    passwordConf: $('input[name=passwordConf]').val()
+                };
+    
+                $.ajax({
+                    type: 'POST',
+                    url: '/register',
+                    data: formData,
+                    dataType: 'json',
+                    encode: true
+                })
+                .done(function(data) {
+                    console.log(data);
+                    if (data.success) {
+                        $('#check').text(data.message);
+                    } else {
+                        $('#check').text(data.message); // Display error message to user
+                    }
+                })
+                .fail(function(xhr, status, error) {
+                    // Display error message to user
+                    $('#check').text("Error: " + xhr.responseJSON.message);
+                });
+            });
+        });
+    </script>
+    </body>
+</html>

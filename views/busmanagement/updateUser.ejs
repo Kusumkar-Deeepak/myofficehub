@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyTransport</title>
+    <link rel="stylesheet" href="/stylesheets/busmanagement/reg.css">
+    <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+</head>
+<body>
+  <div class="container">
+    <h1>Update Student Information Form</h1>
+    <!-- <form id="studentForm" method="post" action="/update/<%= student._id %>"> -->
+      <form id="studentForm" method="post" action="/update/<%= student._id %>" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="<%= student ? student.name : '' %>" required>
+    </div>
+        <div class="form-group">
+            <label for="class">Class:</label>
+            <input type="text" id="class" name="class" value="<%= student.class %>" required>
+        </div>
+          <div class="form-group">
+            <label for="homeAddress">Home Address:</label>
+            <input type="text" id="homeAddress" name="homeAddress" value="<%= student.homeAddress %>" required>
+          </div>
+          <div class="form-group">
+            <label for="rollNo">Roll No:</label>
+            <input type="number" id="rollNo" name="rollNo" value="<%= student.rollNo %>" required>
+          </div>
+          <div class="form-group">
+            <label for="enrollmentNo">Enrollment No:</label>
+            <input type="text" id="enrollmentNo" name="enrollmentNo" value="<%= student.enrollmentNo %>" required>
+          </div>
+          <div class="form-group">
+            <label for="busName">Bus Name:</label>
+            <input type="text" id="busName" name="busName" value="<%= student.busName %>" required>
+          </div>
+          <div class="form-group">
+            <label for="busRoute">Bus Route:</label>
+            <input type="text" id="busRoute" name="busRoute" value="<%= student.busRoute %>" required>
+          </div>
+          <div class="form-group">
+            <label for="busDriverName">Bus Driver Name:</label>
+            <input type="text" id="busDriverName" name="busDriverName" value="<%= student.busDriverName %>" required>
+          </div>
+          <div class="form-group">
+            <label for="totalFees">Total Fees:</label>
+            <input type="text" id="totalFees" name="totalFees" value="<%= student.totalFees %>" required>
+          </div>
+          <div class="form-group">
+            <label for="totalFeesPaid">Total Fees Paid:</label>
+            <input type="text" id="totalFeesPaid" name="totalFeesPaid" value="<%= student.totalFeesPaid %>" required>
+          </div>
+          <div class="form-group">
+            <label for="totalFeesRemained">Total Fees Remained:</label>
+            <input type="text" id="totalFeesRemained" name="totalFeesRemained" value="<%= student.totalFeesRemained %>" required>
+          </div>
+          <div class="form-group">
+            <label for="year">Year:</label>
+            <input type="text" id="year" name="year" value="<%= student.year %>" required>
+          </div>
+          <!-- <div class="form-group">
+            <label for="imageInput">Select Image:</label>
+            <input type="file" id="imageInput" name="imageInput" required accept="image/*">
+          </div> -->
+          <div class="form-group">
+            <label for="imageInput">Select Image:</label>
+            <input type="file" id="imageInput" name="imageInput" accept="image/*">
+        </div>
+        
+          <br><br>
+        <button type="submit" onclick="showAlert()">Update User</button>
+    </form>
+    <script>
+      function showAlert() {
+          alert('Student updated successfully!');
+      }
+  </script>
+</body>
+</html>

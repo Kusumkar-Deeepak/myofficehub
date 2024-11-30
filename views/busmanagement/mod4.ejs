@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/busmanagement/mod4.css">
+    <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+    <title>PolyTransport</title>
+    <style>
+        /* Your custom styles go here */
+        body {
+            background: #eee;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 20px; /* Adjusted gap between cards */
+            padding: 20px; /* Added padding for better spacing */
+        }
+
+        .card {
+            border: none;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%; /* Adjusted width to fill the grid column */
+            height: 450px; /* Adjusted height */
+            position: relative; /* Added position relative */
+        }
+
+        .card:before,
+        .card:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            transition: all 0.5s;
+            transform-origin: bottom;
+        }
+
+        .card:before {
+            background-color: #E1BEE7;
+            transform: scaleY(1);
+        }
+
+        .card:after {
+            background-color: #8E24AA;
+            transform: scaleY(0);
+        }
+
+        .card:hover::after {
+            transform: scaleY(1);
+        }
+
+        .text-center {
+            text-align: center;
+            padding: 10px; /* Added padding for card content */
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .buttons button {
+            border: 1px solid #8E24AA !important;
+            background-color: #8E24AA;
+            color: #fff;
+            height: 40px;
+            width: 100%; /* Make the button full width */
+            margin-top: 10px; /* Added margin between button and content */
+        }
+
+        .buttons button:hover {
+            background-color: #6a1b9a;
+        }
+        .card img {
+    max-width: 100%;
+    height: 7.5rem;
+    width: 7.5rem;
+    display: block;
+    margin: auto;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease; 
+    border: 0.125rem solid transparent;
+    border-radius: 0.5rem; 
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); 
+}
+
+.card:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    /* border-color: #3498db; */
+}
+@media (max-width: 576px) {
+        .card {
+            flex-basis: calc(100% - 30px);
+        }
+    }
+
+    @media (min-width: 577px) and (max-width: 767px) {
+        .card {
+            flex-basis: calc(50% - 30px);
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 991px) {
+        .card {
+            flex-basis: calc(33.33% - 30px);
+        }
+    }
+
+    @media (min-width: 992px) {
+        .card {
+            flex-basis: calc(25% - 30px);
+        }
+    }    </style>
+    <title>User Cards with Identity Card Popup</title>
+</head>
+
+<body>
+
+  
+
+  <!--                                                   1ST CARD                                     -->
+  <div class="container mt-5">
+    <div class="container-cards">
+        <div class="card" data-toggle="modal" data-target="#identityCardModal1">
+            <div class="text-center">
+                <h5 class="mt-2 mb-0">Bus Name: V1</h5> <br><!-- Moved Bus Name here -->
+                <img src="/images/bus images.png">
+            </div>
+            <div class="text-center mt-3">
+                <h5 class="mt-2 mb-0">Name: Anil Kanse</h5>
+                <span>Bus No: MH04JK-3072</span>
+                <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+                <div class="buttons">
+                    <button class="btn btn-primary">View Identity Card</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add additional cards here -->
+
+    </div>
+</div>
+
+   <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal1" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel1"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="identityCardModalLabel1">Anil Kanse's Identity Card</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+  <img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">                </div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Name:</strong> Anil Kanse</li>
+                        <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                        <!-- Add more details as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+
+  <!--                                                   2ND CARD                                     -->
+
+
+  <div class="container mt-5">
+    <div class="container-cards">
+        <div class="card" data-toggle="modal" data-target="#identityCardModal2">
+            <div class="text-center">
+                <h5 class="mt-2 mb-0">Bus Name: V2</h5> <br><!-- Moved Bus Name here -->
+                <img src="/images/bus images.png">
+            </div>
+            <div class="text-center mt-3">
+                <h5 class="mt-2 mb-0">Name: Mauli Dhavate</h5>
+                <span>Bus No:MH12KQ-1971</span>
+                <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+                <div class="buttons">
+                    <button class="btn btn-primary">View Identity Card</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add additional cards here -->
+
+    </div>
+</div>
+
+   <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal2" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel2"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="identityCardModalLabel1">Mauli Dhavate's Identity Card</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+  <img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">                </div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Name:</strong> Mauli Dhavate</li>
+                        <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                        <!-- Add more details as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+  <!--                                                   3RD CARD                                     -->
+
+
+
+
+  <div class="container mt-5">
+    <div class="container-cards">
+        <div class="card" data-toggle="modal" data-target="#identityCardModal3">
+            <div class="text-center">
+                <h5 class="mt-2 mb-0">Bus Name: V3</h5> <br><!-- Moved Bus Name here -->
+                <img src="/images/bus images.png">
+            </div>
+            <div class="text-center mt-3">
+                <h5 class="mt-2 mb-0">Name: Arjun Shinde</h5>
+                <span>Bus No:MH24AU-9505</span>
+                <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+                <div class="buttons">
+                    <button class="btn btn-primary">View Identity Card</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add additional cards here -->
+
+    </div>
+</div>
+
+   <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal3" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel3"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="identityCardModalLabel1">Arjun Shinde's Identity Card</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+  <img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">                </div>
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item"><strong>Name:</strong> Arjun Shinde</li>
+                        <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                        <!-- Add more details as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+
+ <!--                                                   4TH CARD                                     -->
+ 
+ <div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal4">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V4</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Babulal Daroge</h5>
+              <span>Bus No:MH14BA-9505</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal4" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel4"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Babulal Daroge's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Babulal Daroge</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!--                                                   5TH CARD                                     -->
+
+
+
+
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal5">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V5</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Siddheshwar Kamble</h5>
+              <span>Bus No:MH12KQ-0476</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal5" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel5"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Siddheshwar Kamble's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Siddheshwar Kamble</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+<!--                                                   6TH CARD                                     -->
+
+
+
+
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal6">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V6</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Bapu Tirake</h5>
+              <span>Bus No:MH08E-9234</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal6" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel6"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Bapu Tirake's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Bapu Tirake</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+<!--                                                   7TH CARD                                     -->
+ 
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal7">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V7</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Salim Mulani</h5>
+              <span>Bus No:MH14CW-4018</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal7" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel7"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Salim Mulani's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Salim Mulani</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!--                                                   8TH CARD                                     -->
+
+
+
+
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal8">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V8</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Kiran Chavan</h5>
+              <span>Bus No:MH06S-9508</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal8" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel8"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Kiran Chavan's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Kiran Chavan</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+<!--                                                   9TH CARD                                     -->
+
+
+
+
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal9">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V9</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Shivaji Kadam</h5>
+              <span>Bus No:MH24AB-8558</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal9" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel9"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Shivaji Kadam's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Shivaji Kadam</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<!--                                                   10TH CARD                                     -->
+ 
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal10">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V10</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Ganesh Lakhe</h5>
+              <span>Bus No:MH24AB7605</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal10" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel10"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Ganesh Lakhe's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Ganesh Lakhe</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!--                                                   11TH CARD                                     -->
+
+
+
+
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal11">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V11</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Santosh Gaikwad</h5>
+              <span>Bus No:MH12HB-5999</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal11" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel11"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Santosh Gaikwad's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Santosh Gaikwad</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+<!--                                                   12TH CARD                                     -->
+
+
+
+
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal12">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V12</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Tanaji Suryawanshi</h5>
+              <span>Bus No:MH04GP-0867</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal12" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel12"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Tanaji Suryawanshi's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Tanaji Suryawanshi</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+
+<!--                                                   13TH CARD                                     -->
+ 
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal13">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V13</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Imam Shekh</h5>
+              <span>Bus No:MH24AB7614</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal13" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel13"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Imam Shekh's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+<img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Imam Shekh</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+<!--                                                   14TH CARD                                     -->
+
+
+
+
+<div class="container mt-5">
+  <div class="container-cards">
+      <div class="card" data-toggle="modal" data-target="#identityCardModal14">
+          <div class="text-center">
+              <h5 class="mt-2 mb-0">Bus Name: V14</h5> <br><!-- Moved Bus Name here -->
+              <img src="/images/bus images.png">
+          </div>
+          <div class="text-center mt-3">
+              <h5 class="mt-2 mb-0">Name: Mahesh Charakpalle</h5>
+              <span>Bus No:MH24AB-7614</span>
+              <p>A skilled bus driver exemplifies professionalism and empathy, fostering a welcoming atmosphere and ensuring passengers feel secure throughout the journey.</p>
+              <div class="buttons">
+                  <button class="btn btn-primary">View Identity Card</button>
+              </div>
+          </div>
+      </div>
+
+      <!-- Add additional cards here -->
+
+  </div>
+</div>
+
+ <!-- Identity Card Modal 1 -->
+<div class="modal fade" id="identityCardModal14" tabindex="-1" role="dialog" aria-labelledby="identityCardModalLabel14"
+aria-hidden="true">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+      <div class="modal-header">
+          <h5 class="modal-title" id="identityCardModalLabel1">Mahesh Charakpalle's Identity Card</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-md-6">
+                  <img src="/images/bus images.png" class="img-fluid" alt="Driver Photo">
+              </div>
+              <div class="col-md-6">
+                  <ul class="list-group">
+                      <li class="list-group-item"><strong>Name:</strong> Mahesh Charakpalle</li>
+                      <li class="list-group-item"><strong>Mobile No:</strong></li>
+<li class="list-group-item"><strong>Bus Route:</strong></li>
+                      <!-- Add more details as needed -->
+                  </ul>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+  </div>
+</div>
+</div>
+
+
+
+    <!-- Add additional modals here -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

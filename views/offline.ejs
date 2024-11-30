@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offline Page</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .frem {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: url('/images/gifs.gif');
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .frem p {
+        position: absolute;
+        top: 3rem;
+        font-size: 7rem;
+        color: #00000063;
+    }
+    .frem h2 {
+        position: absolute;
+        bottom: 9rem;
+        font-size: 34px;
+    }
+    .frem h5 {
+        position: absolute;
+        bottom: 6rem;
+        color: #9c9c9c;
+    }
+    .frem a {
+        position: absolute;
+        bottom: 1rem;
+        background: linear-gradient(45deg, #ff0034, #ffbc00);
+        padding: 12px;
+        color: white;
+        text-decoration: none;
+        font-size: 23px;
+        border-radius: 13px;
+        cursor: pointer; /* Add cursor pointer */
+    }
+    @media only screen and (max-width: 768px) {
+    .frem h2 {
+        font-size: 28px; /* Decrease font size for smaller screens */
+        bottom: 7rem; /* Adjust position */
+    }
+    .frem h5 {
+        bottom: 4rem; /* Adjust position */
+        font-size: 0.9rem; /* Decrease font size for smaller screens */
+        text-align: center; /* Center align text */
+        padding: 0 10px; /* Add padding for better readability */
+    }
+    .frem a {
+        bottom: 1rem; /* Adjust position */
+        font-size: 18px; /* Decrease font size for smaller screens */
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .frem p {
+        font-size: 5rem; /* Decrease font size for smaller screens */
+        top: 2rem; /* Adjust position */
+    }
+    .frem h2 {
+        font-size: 24px; /* Decrease font size for smaller screens */
+        bottom: 5rem; /* Adjust position */
+    }
+    .frem h5 {
+        bottom: 2rem; /* Adjust position */
+        font-size: 0.8rem; /* Decrease font size for smaller screens */
+    }
+    .frem a {
+        bottom: 0.5rem; /* Adjust position */
+        font-size: 16px; /* Decrease font size for smaller screens */
+        padding: 8px; /* Adjust padding */
+    }
+}
+
+</style>
+
+<body>
+    <div class="frem">
+        <p>404</p>
+        <h2>Look like you're lost</h2><br>
+        <h5>The page you are looking for is not available. Please check your internet connection and try again later.<br> 
+            Once your internet connection is restored, you can click on the link below to return to the home page.</h5>
+
+        <!-- Add an ID to the anchor tag for easier access -->
+        <a id="homeLink">Go to Home</a>
+    </div>
+
+    <script>
+        // Function to check if the user is online
+        function isOnline() {
+            return navigator.onLine;
+        }
+
+        // Function to handle click on the "Go to Home" link
+        function goToHome() {
+            // Check if the user is online
+            if (isOnline()) {
+                // If online, redirect to home page
+                window.location.href = '/';
+            } else {
+                // If offline, display a message (optional)
+                alert('You are currently offline. Please connect to the internet to access this page.');
+            }
+        }
+
+        // Add event listener to the "Go to Home" link
+        document.getElementById('homeLink').addEventListener('click', goToHome);
+    </script>
+</body>
+
+</html>

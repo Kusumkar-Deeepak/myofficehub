@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+    <title>PolyTransport</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            color: white;
+        }
+
+        #chart-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        #additional-info {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem; 
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Regular Audits and Evaluations</h1>
+    </header>
+
+    <div id="additional-info">
+        <p>Welcome to the Bus Service Audits and Evaluations portal. This section offers a detailed insight into the financial performance of our bus service through regular audits and evaluations. The comprehensive data analysis provides a transparent view of the revenue, expenses, and profit/loss trends over the years, starting from 2008.</p>
+    
+        <p>The line chart below visually represents the financial data, offering a quick glance at the performance trajectory. Each point on the chart represents a year, showcasing the dynamics of revenue generation, operational expenses, and resulting profit or loss.</p>
+    
+        <p>As we delve into the table, you'll find a breakdown of the financial figures for each year. This includes the total revenue earned, operational expenses incurred, and the resultant profit or loss. The meticulous record-keeping allows for a thorough examination of our financial stability and operational efficiency.</p>
+    
+        <p>Our commitment to transparency and accountability is reflected in these audits, ensuring that we maintain the highest standards in delivering quality bus services to our community. Feel free to explore the chart and table to gain valuable insights into the financial health of our bus service.</p>
+    </div>
+    
+
+    <div id="chart-container">
+        <canvas id="revenueChart"></canvas>
+    </div>
+
+    <div id="additional-info">
+        <p>Welcome to the Bus Service Audits and Evaluations portal. This section provides a comprehensive overview of our bus service's financial performance through regular audits and evaluations, promoting transparency and accountability in our operations. The data analysis covers revenue, expenses, and profit/loss trends over the years, starting from 2008.</p>
+    
+        <p>The line chart visually illustrates the financial trajectory, showcasing key insights into revenue generation, operational expenses, and resulting profit or loss for each year. This graphical representation enables a quick and intuitive understanding of our financial dynamics.</p>
+    
+        <p>Now, let's delve into the detailed financial breakdown presented in the table. Each row corresponds to a specific year, and the columns provide the following information:</p>
+    
+        <ul>
+            <li><strong>Year:</strong> The calendar year for which financial data is recorded.</li>
+            <li><strong>Revenue:</strong> Total income generated during the specified year, including ticket sales, sponsorships, and other sources.</li>
+            <li><strong>Expenses:</strong> Operational costs incurred to maintain and enhance the quality of our bus services, covering maintenance, fuel, staff salaries, and other essential expenditures.</li>
+            <li><strong>Profit/Loss:</strong> The financial outcome for the year, representing the difference between revenue and expenses. A positive value indicates profit, while a negative value represents a loss.</li>
+        </ul>
+    
+        <p>These detailed financial records underscore our commitment to transparency, allowing stakeholders to assess the financial health and sustainability of our bus service. We invite you to explore the chart and table to gain valuable insights into our financial performance and strategic decision-making.</p>
+    </div>
+    
+
+    <table>
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Revenue</th>
+                <th>Expenses</th>
+                <th>Profit/Loss</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2008</td>
+                <td>50,000</td>
+                <td>40,000</td>
+                <td>10,000</td>
+            </tr>
+            <tr>
+                <td>2009</td>
+                <td>60,000</td>
+                <td>45,000</td>
+                <td>15,000</td>
+            </tr>
+            <tr>
+                <td>2010</td>
+                <td>75,000</td>
+                <td>55,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2011</td>
+                <td>90,000</td>
+                <td>70,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2012</td>
+                <td>50,000</td>
+                <td>40,000</td>
+                <td>10,000</td>
+            </tr>
+            <tr>
+                <td>2012</td>
+                <td>60,000</td>
+                <td>45,000</td>
+                <td>15,000</td>
+            </tr>
+            <tr>
+                <td>2013</td>
+                <td>75,000</td>
+                <td>55,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2014</td>
+                <td>90,000</td>
+                <td>70,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2015</td>
+                <td>50,000</td>
+                <td>40,000</td>
+                <td>10,000</td>
+            </tr>
+            <tr>
+                <td>2016</td>
+                <td>60,000</td>
+                <td>45,000</td>
+                <td>15,000</td>
+            </tr>
+            <tr>
+                <td>2017</td>
+                <td>75,000</td>
+                <td>55,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2018</td>
+                <td>90,000</td>
+                <td>70,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2019</td>
+                <td>50,000</td>
+                <td>40,000</td>
+                <td>10,000</td>
+            </tr>
+            <tr>
+                <td>2020</td>
+                <td>60,000</td>
+                <td>45,000</td>
+                <td>15,000</td>
+            </tr>
+            <tr>
+                <td>2021</td>
+                <td>75,000</td>
+                <td>55,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2022</td>
+                <td>90,000</td>
+                <td>70,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2023</td>
+                <td>75,000</td>
+                <td>55,000</td>
+                <td>20,000</td>
+            </tr>
+            <tr>
+                <td>2024</td>
+                <td>90,000</td>
+                <td>70,000</td>
+                <td>20,000</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <div class="footer">
+        <p>&copy; 2023 PolyTransport. All rights reserved.<br>
+            -By Kusumkar Deepak Prakash <!-- &#128540; -->
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Dummy data (replace this with actual data)
+        const years = ['2008', '2013', '2018', '2023'];
+        const revenueData = [50000, 60000, 75000, 90000];
+        const expensesData = [40000, 45000, 55000, 70000];
+
+        // Calculate profit/loss
+        const profitLossData = revenueData.map((revenue, index) => revenue - expensesData[index]);
+
+        // Create line chart
+        const ctx = document.getElementById('revenueChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: 'Revenue',
+                    data: revenueData,
+                    fill: false,
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(75, 192, 192, 1)',
+                    pointHoverRadius: 8,
+                }, {
+                    label: 'Expenses',
+                    data: expensesData,
+                    fill: false,
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(255, 99, 132, 1)',
+                    pointHoverRadius: 8,
+                }, {
+                    label: 'Profit/Loss',
+                    data: profitLossData,
+                    fill: false,
+                    borderColor: 'rgba(255, 206, 86, 1)',
+                    borderWidth: 2,
+                    pointRadius: 5,
+                    pointBackgroundColor: 'rgba(255, 206, 86, 1)',
+                    pointHoverRadius: 8,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    x: {
+                        type: 'linear',
+                        position: 'bottom'
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function (value, index, values) {
+                                return '' + value;
+                            }
+                        }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        enabled: true,
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function (tooltipItem, data) {
+                                const datasetLabel = data.datasets[tooltipItem.datasetIndex].label || '';
+                                return datasetLabel + ': ' + tooltipItem.yLabel.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '&,');
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

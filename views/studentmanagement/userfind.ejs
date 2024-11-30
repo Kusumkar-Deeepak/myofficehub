@@ -1,0 +1,81 @@
+<!-- userfind.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Details</title>
+  <link rel="stylesheet" href="/stylesheets/userfind.css">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <!-- Your navigation bar content -->
+  </div>
+
+ <!-- userfind.ejs -->
+
+<!-- ... (other parts of your HTML) ... -->
+
+<div class="content">
+  <h2>Student Details</h2>
+
+  <% if (typeof studentData !== 'undefined' && studentData) { %>
+    <div class="student-details">
+      <p><strong>Name:</strong> <%= studentData.firstName || '' %> <%= studentData.middleName || '' %> <%= studentData.lastName || '' %></p>
+      <p><strong>Roll Number:</strong> <%= studentData.rollNumber || '' %></p>
+      <p><strong>Enrollment Number:</strong> <%= studentData.enrollmentNumber || '' %></p>
+      <p><strong>Email:</strong> <%= studentData.email || '' %></p>
+      <p><strong>Address:</strong> <%= studentData.address || '' %></p>
+      <p><strong>semester_1_marks:</strong> <%= studentData.semester_1_marks || '' %></p>
+      <p><strong>semester_2_marks:</strong> <%= studentData.semester_2_marks || '' %></p>
+      <p><strong>semester_3_marks:</strong> <%= studentData.semester_3_marks || '' %></p>
+      <p><strong>semester_4_marks:</strong> <%= studentData.semester_4_marks || '' %></p>
+      <p><strong>semester_5_marks:</strong> <%= studentData.semester_5_marks || '' %></p>
+      <p><strong>semester_6_marks:</strong> <%= studentData.semester_6_marks || '' %></p>
+     
+      <p><strong>year:</strong> <%= studentData.year || '' %></p>
+      <!-- Add more fields as needed -->
+    </div>
+
+    <div class="action-buttons">
+      <button onclick="openUpdateForm()">Update</button>
+      <button onclick="confirmDelete()">Delete</button>
+    </div>
+
+    <!-- Update form -->
+    <div id="updateForm" class="update-form">
+      <form action="/updateUser" method="post">
+        <!-- Include necessary input fields for update -->
+        <input type="hidden" name="enrollmentNumber" value="<%= studentData.enrollmentNumber || '' %>">
+        <button type="submit" id="upbutton">Update Student</button>
+      </form>
+    </div>
+
+    <!-- Delete confirmation -->
+    <div id="deleteConfirmation" class="delete-confirmation">
+      <button onclick="deleteStudent('<%= studentData.enrollmentNumber %>')" id="updelbutton">Yes, Delete</button>
+      <button onclick="cancelDelete()" id="updelbutton">Cancel</button>
+    </div>
+
+  <% } else if (errorMessage) { %>
+    <p class="error-message"><%= errorMessage %></p>
+  <% } else { %>
+    <p class="error-message">No student data available</p>
+  <% } %>
+
+</div>
+
+
+
+<!-- ... (closing tags and other parts of your HTML) ... -->
+
+  <!-- Include your JavaScript file for any dynamic functionality -->
+  <script src="/javascripts/studantmanagement/userfind.js"></script>
+
+</body>
+
+</html>

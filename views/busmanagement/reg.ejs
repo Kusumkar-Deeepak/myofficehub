@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolyTransport</title>
+  <link rel="stylesheet" href="/stylesheets/busmanagement/reg.css">
+  <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+  <style>
+    .footer {
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem; 
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Student Information Form</h1>
+    <form id="studentForm" autocomplete="off">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class" required>
+      </div>
+      <div class="form-group">
+        <label for="homeAddress">Home Address:</label>
+        <input type="text" id="homeAddress" name="homeAddress" required>
+      </div>
+      <div class="form-group">
+        <label for="rollNo">Roll No:</label>
+        <input type="number" id="rollNo" name="rollNo" required>
+      </div>
+      <div class="form-group">
+        <label for="enrollmentNo">Enrollment No:</label>
+        <input type="text" id="enrollmentNo" name="enrollmentNo" required>
+      </div>
+      <div class="form-group">
+        <label for="busName">Bus Name:</label>
+        <input type="text" id="busName" name="busName" required>
+      </div>
+      <div class="form-group">
+        <label for="busRoute">Bus Route:</label>
+        <input type="text" id="busRoute" name="busRoute" required>
+      </div>
+      <div class="form-group">
+        <label for="busDriverName">Bus Driver Name:</label>
+        <input type="text" id="busDriverName" name="busDriverName" required>
+      </div>
+      <div class="form-group">
+        <label for="totalFees">Total Fees:</label>
+        <input type="text" id="totalFees" name="totalFees" required>
+      </div>
+      <div class="form-group">
+        <label for="totalFeesPaid">Total Fees Paid:</label>
+        <input type="text" id="totalFeesPaid" name="totalFeesPaid" required>
+      </div>
+      <div class="form-group">
+        <label for="totalFeesRemained">Total Fees Remained:</label>
+        <input type="text" id="totalFeesRemained" name="totalFeesRemained" required>
+      </div>
+      <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required>
+      </div>
+      <div>
+        <label for="imageInput">Select Image:</label>
+        <input type="file" id="imageInput" name="imageInput" required accept="image/*">
+      </div><br><br>
+      <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+  </div>
+
+  <hr>
+    <div class="footer">
+        <p>&copy; 2023 PolyTransport. All rights reserved.<br>
+            -By Kusumkar Deepak Prakash <!-- &#128540; -->
+        </p>
+    </div>
+
+
+  <% if (typeof alertMessage !== 'undefined') { %>
+    <script>
+      alert('<%= alertMessage %>');
+    </script>
+  <% } %>
+  
+
+
+  <script>
+    // function validateForm() {
+    //   // Get all input fields
+    //   const inputs = document.querySelectorAll('input');
+    //   let isValid = true;
+
+    //   // Loop through each input field
+    //   inputs.forEach(input => {
+    //     // Check if the input is required and empty
+    //     if (input.hasAttribute('required') && input.value.trim() === '') {
+    //       isValid = false;
+    //       // Highlight the input field with red border
+    //       input.style.border = '1px solid red';
+    //     } else {
+    //       // Remove red border if input is valid
+    //       input.style.border = '';
+    //     }
+    //   });
+
+    //   // If form is valid, submit it
+    //   if (isValid) {
+    //     submitForm();
+    //   } else {
+    //     // Display error message
+    //     alert('Please fill out all required fields');
+    //   }
+    // }
+
+    // async function submitForm() {
+    //   try {
+    //     const form = document.getElementById('studentForm');
+    //     const formData = new FormData(form);
+  
+    //     const response = await fetch('http://localhost:4000/api/saveStudentWithImage', {
+    //       method: 'POST',
+    //       body: formData,
+    //     });
+  
+    //     if (response.status === 201) {
+    //       alert('Student data saved successfully');
+          
+    //       // Redirect to the main page after the alert is dismissed
+    //       window.location.href = '/home'; // Update the URL path accordingly
+    //     } else {
+    //       throw new Error('Internal Server Error');
+    //     }
+    //   } catch (error) {
+    //     console.error('Error saving student data:', error);
+    //     if (error.message === 'Internal Server Error') {
+    //       alert('Student Already Exists');
+    //     }
+    //   }
+    // }
+
+  </script>
+  <script>
+    async function validateForm() {
+      // Fetch all input fields
+      const name = document.getElementById('name').value;
+      const className = document.getElementById('class').value;
+      const homeAddress = document.getElementById('homeAddress').value;
+      const rollNo = document.getElementById('rollNo').value;
+      const enrollmentNo = document.getElementById('enrollmentNo').value;
+      const busName = document.getElementById('busName').value;
+      const busRoute = document.getElementById('busRoute').value;
+      const busDriverName = document.getElementById('busDriverName').value;
+      const totalFees = document.getElementById('totalFees').value;
+      const totalFeesPaid = document.getElementById('totalFeesPaid').value;
+      const totalFeesRemained = document.getElementById('totalFeesRemained').value;
+      const year = document.getElementById('year').value;
+      const imageInput = document.getElementById('imageInput').files[0];
+  
+      // Validate each field
+      if (!name || !className || !homeAddress || !rollNo || !enrollmentNo || !busName || !busRoute || !busDriverName || !totalFees || !totalFeesPaid || !totalFeesRemained || !year || !imageInput) {
+        alert('Please fill out all fields.');
+        return;
+      }
+  
+      if (isNaN(rollNo) || isNaN(totalFees) || isNaN(totalFeesPaid) || isNaN(totalFeesRemained) || isNaN(year)) {
+        alert('Roll No, Total Fees, Total Fees Paid, Total Fees Remained, and Year must be numeric values.');
+        return;
+      }
+  
+      // Perform additional validation if needed
+  
+      // Create FormData object
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('class', className);
+      formData.append('homeAddress', homeAddress);
+      formData.append('rollNo', rollNo);
+      formData.append('enrollmentNo', enrollmentNo);
+      formData.append('busName', busName);
+      formData.append('busRoute', busRoute);
+      formData.append('busDriverName', busDriverName);
+      formData.append('totalFees', totalFees);
+      formData.append('totalFeesPaid', totalFeesPaid);
+      formData.append('totalFeesRemained', totalFeesRemained);
+      formData.append('year', year);
+      formData.append('imageInput', imageInput);
+  
+      try {
+        const response = await fetch('http://localhost:4000/api/saveStudentWithImage', {
+          method: 'POST',
+          body: formData,
+        });
+  
+        if (response.status === 201) {
+          alert('Student data saved successfully');
+          window.location.href = '/home'; // Update the URL path accordingly
+        } else {
+          throw new Error('Internal Server Error');
+        }
+      } catch (error) {
+        console.error('Error saving student data:', error);
+        if (error.message === 'Internal Server Error') {
+          alert('Student Already Exists');
+        }
+      }
+    }
+  </script>
+  <script>
+    document.addEventListener('keydown', function (e) {
+      // Check if the user pressed Ctrl+U
+      if (e.ctrlKey && e.key === 'u') {
+        // Prevent the default action (viewing page source)
+        e.preventDefault();
+        alert('Source Code Nahi milega bhai!!.');
+      }
+    });
+  </script>
+
+</body>
+</html>

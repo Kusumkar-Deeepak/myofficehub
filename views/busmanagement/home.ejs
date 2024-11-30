@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolyTranspot</title>
+    <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+    <link rel="stylesheet" href="/stylesheets/busmanagement/home.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+
+    <!-- <style>
+        /* Custom CSS to prevent text wrapping */
+        .btn-single-line {
+            white-space: nowrap;
+        }
+        
+    </style> -->
+    <style>
+        /* Center the button horizontally */
+        .button-container {
+            text-align: center;
+        }
+        .button {
+  height: 50px;
+  width: 150px;
+  border: 1px solid black   ;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+
+}
+
+.button:hover {
+  box-shadow: .5px .5px 150px #252525;
+}
+
+.type1::after {
+  content: "Thank You ";
+  height: 50px;
+  width: 150px;
+  background-color: #008080;
+  color: #fff;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(50px);
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1::before {
+  content: "\f2f5 Log Out"; /* Unicode value for Font Awesome logout icon: \f2f5 */
+  height: 50px;
+  width: 150px;
+  background-color: #fff;
+  color: #008080;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translateY(0px) scale(1.2);
+  font-family: "Font Awesome"; /* Specify the Font Awesome font family */
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.type1:hover::after {
+  transform: translateY(0) scale(1.2);
+}
+
+.type1:hover::before {
+  transform: translateY(-50px) scale(0) rotate(120deg);
+}
+    </style>
+</head>
+<body>
+   
+      
+
+
+
+<div class="navbar">
+    <div class="container">
+        <img src="/images/logo-no-background.png" alt="Student Bus Information" width="70rem">
+        <a class="brand" href="/home">PolyTransport</a>
+        <div class="menu">
+            <div class="dropdown">
+                <button class="dropbtn" id="menuBtn">
+                    <img width="24" height="24" src="https://img.icons8.com/android/24/FFFFFF/menu.png" alt="menu"/>
+                </button>
+                <div class="dropdown-content" id="menuContent">
+                    <a href="/">Home</a>
+                    <a href="/documentation">Documentation</a>
+                    <!-- <a href="/login">Login</a>
+                    <a href="/signup">Signup</a>
+                    <a href="/delete">Delete User</a> -->
+                    <a href="/safety">Safety and Compliance</a>
+                    <a href="/emergency">Emergency</a>
+                    <a href="/devoloper">Devoloper</a>
+                    <a href="/busRevenue">Bus Revenue</a>
+                    <a href="/teacherCode">Feedback</a>
+                    <a href="/teacherCode2">Student data</a>
+                    <b><a href="/reg" id="addUser" style="color: red;">Add User</a></b>
+                    <button class="close-btn" onclick="closeMenu()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <div class="news-container">
+        <div class="title">
+            Update
+        </div>
+
+        <ul>
+            <!-- <li>
+                Welcome To PolyTransport !
+            </li> -->
+            
+            <li>
+                Introducing a Seamless User Integration Experience ! 
+            </li>
+
+            <li>
+                <b>Explore Our Menu's 'Add User' Option for Effortless Profile Inclusion !</b>
+            </li>
+        </ul>
+    </div>
+    <br><br>
+    <style>
+        /* CSS styles for the welcome message */
+        h3 {
+            font-size: 24px; /* Adjust the font size */
+            font-weight: bold; /* Make the text bold */
+            color: #333; /* Set the text color */
+            margin-top: 25px; /* Add some top margin */
+            text-align: center; /* Center align the text */
+        }
+    </style>
+    
+<!-- Display the username if it's available -->
+<% if (typeof username !== 'undefined') { %>
+    <h3>Welcome <%= 
+        username %> to PolyTransport!</h3>
+<% } else { %>
+    <h3>Welcome To PolyTransport!</h3>
+<% } %>
+
+
+    
+<div class="main">
+    
+<div class="module" id="module1">
+    <h2> Bus Information</h2>
+    <img src="/images/Bus Student Info.jpg" alt="Student Bus Information" width="300rem">
+    <p id="mod1info">Designed for convenience, Module 1 streamlines bus-related details for users. Input your enrollment number, and access personalized information on bus routes, stops, and real-time tracking. Stay informed about schedules and receive timely notifications for any updates. The submission button facilitates quick access, and a feedback mechanism ensures user engagement. With a responsive design, the module guarantees accessibility across devices, prioritizing user security and seamless integration with the PolyTransport system.</p>
+    <input type="button" value="Use This!" id="mod1but" >
+</div>
+<div class="module2" id="module2">
+    <h2> Payment Management</h2>
+    <img src="/images/payment Manage.jpg" alt="Student Payment Management" width="300rem">
+    <p id="mod2info">Module 2 focuses on efficient payment management for bus services. Users can input their name, class, bus stop, and enrollment details, along with uploading a photo. The "Make Payment" button initiates a secure payment process. The module ensures a user-friendly experience, with clear form fields and prompts. It enhances user convenience by centralizing payment activities, promoting transparency, and contributing to the overall effectiveness of the PolyTransport system.</p>
+    <input type="button" value="Use This!" id="mod2but">
+</div>
+<div class="module3" id="module3">
+    <h2> User Feedback</h2>
+    <img src="/images/feedback.jpg" alt="Student Payment Management" width="300rem">
+    <p id="mod3info">User feedback is a crucial aspect of your college bus system, providing valuable insights into the user experience. Implement a streamlined feedback mechanism that allows students and staff to share their thoughts, suggestions, and concerns. Keep the process simple and accessible, encouraging regular feedback. Analyze this input to identify areas for improvement and enhance the overall effectiveness of the transportation service. Regularly address user feedback, demonstrating a commitment to meeting the needs of the college community and ensuring a positive and user-centric bus system.</p>
+<input type="button" value="Use This!" id="mod3but" onclick="openFeedbackForm()">
+</div>
+<div class="module4" id="module4">
+    <h2>Driver And Vehicle Information</h2>
+    <img src="/images/Driver and Vehicle Information.jpg" alt="Student Payment Management" width="300rem">
+    <p id="mod4info">Driver and vehicle information is essential for the efficient operation of your college bus system. Maintain a comprehensive database that includes details about experienced and licensed drivers, ensuring they meet safety standards and regulations. Keep accurate records of each bus, including maintenance history and relevant specifications. This information not only ensures the safety of passengers but also aids in scheduling, routing, and overall logistics. Regularly update and monitor driver and vehicle data to uphold the reliability and safety of the transportation service.</p>
+    <input type="button" value="Use This!" id="mod4but"  >
+</div>
+</div>
+
+<div class="button-container">
+    <button class="button type1"></button>
+</div>
+
+ <!-- Your JavaScript code here -->
+    <script>
+        document.querySelector('.type1').addEventListener('click', function() {
+            fetch('/logout',{method:"POST"}).then(function(){window.location='/'});
+            // window.location.href = '/log';
+        });
+    </script>
+<hr>
+<div class="footer">
+    <p>&copy; 2023-24 PolyTransport. All rights reserved.<br>
+        -By Kusumkar Deepak Prakash <!-- &#128540; -->
+    </p>
+</div>
+<!--                                               Pop Up 1                                                -->
+<!-- ... (your existing HTML) ... -->
+
+<!-- Pop Up 1 -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+      <div class="close" onclick="closeModal()">&times;</div>
+      <h2>Enter Your Enrollment Number</h2>
+      <p>Provide your enrollment number to proceed</p>
+
+      <!-- Move the form inside the modal content -->
+      <form id="enrollmentForm" action="/enrollment/" method="GET" autocomplete="off">
+          <input type="text" id="enrollmentInput" name="enrollmentNumber" placeholder="Enrollment Number" required="required" autocomplete="off">
+          <!-- Change button type to "submit" -->
+          <button type="submit">Submit</button>
+      </form>
+  </div>
+</div>
+
+<!-- ... (your existing HTML) ... -->
+
+
+
+<!-- ... (your existing HTML) ... -->
+
+<!--                                               Pop Up 2                                               -->
+<div id="myModal2" class="modal">
+    <div class="modal-content">
+        <div class="close" onclick="closeModal2()">&times;</div>
+        <h2>Enter Your Enrollment Number</h2>
+        <p>Provide your enrollment number to proceed</p>
+
+        <!-- Form for Module 2 -->
+        <form id="module2Form" action="/module2/" method="POST" autocomplete="off">
+            <input type="text" id="module2Input" name="module2Data" placeholder="Enrollment Number" required="required" autocomplete="off">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!--                                               Pop Up 3                                               -->
+<!-- Button to open the feedback form -->
+<!-- The Updated Feedback Form Modal -->
+<div id="newFeedbackModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close" onclick="closeNewFeedbackForm()">&times;</span>
+      <h2>Feedback Form</h2>
+      <form id="newFeedbackForm" autocomplete="off">
+          <label for="newName">Name:</label>
+          <input type="text" id="newName" name="newName" required autocomplete="off"><br><br>
+        
+          <label for="newClassName">Class:</label>
+          <input type="text" id="newClassName" name="newClassName" autocomplete="off" required><br><br>
+        
+          <label for="newRollNo">Roll No:</label>
+          <input type="number" id="newRollNo" name="newRollNo" autocomplete="off" required><br><br>
+        
+          <label for="newFeedback">Feedback:</label><br>
+          <textarea id="newFeedback" name="newFeedback" rows="4" autocomplete="off" cols="50" required></textarea><br><br>
+        
+          <label for="newRating">Rating:</label>
+          <input type="number" id="newRating" name="newRating" autocomplete="off" min="1" max="5" required><br><br>
+        
+          <input type="submit" value="Submit" onclick="submitNewFeedback(event)">
+      </form>
+    </div>
+  </div>
+  
+
+<script src="/javascripts/busmanagement/home.js"></script>
+<script>
+ document.addEventListener('keydown', function (e) {
+  // Check if the user pressed Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, or F12
+  if (
+    (e.ctrlKey && e.key === 'u') ||
+    (e.ctrlKey && e.shiftKey && (e.key === 'i' || e.key === 'I')) ||
+    (e.ctrlKey && e.shiftKey && (e.key === 'j' || e.key === 'J')) ||
+    e.key === 'F12'
+  ) {
+    // Prevent the default action (viewing page source or opening DevTools)
+    e.preventDefault();
+    alert('Source Code Nahi milega bhai!!.');
+  }
+});
+
+
+  </script>
+</body>
+</html>

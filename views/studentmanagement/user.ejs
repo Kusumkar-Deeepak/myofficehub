@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>studant management</title>
+  <link rel="icon" type="image/png" href="/images/polystudentia2.png">
+  <!-- <link rel="stylesheet" href="/stylesheets/busmanagement/home.css"> -->
+  <link rel="stylesheet" href="/stylesheets/home1.css">
+  <link rel="stylesheet" href="/stylesheets/home2.css">
+</head>
+
+<body>
+
+  <div class="navbar">
+    <div class="container">
+      <img src="/images/polystudentia2.png" alt="Student Bus Information" width="70rem">
+      <a class="brand" href="/home">PolyStudentia</a>
+      <div class="menu">
+        <div class="dropdown">
+          <button class="dropbtn" id="menuBtn">
+            <img width="24" height="24" src="https://img.icons8.com/android/24/FFFFFF/menu.png" alt="menu" />
+          </button>
+          <div class="dropdown-content" id="menuContent">
+            <a href="/">Home</a>
+            <a href="/excelupload">add student excel file</a>
+            <!-- <a href="/login">Login</a>
+            <a href="/signup">Signup</a>
+            <a href="/feedback">Feedback</a> -->
+
+            <button class="close-btn" onclick="closeMenu()">Close</button>
+            <!-- Add more dropdown items as needed -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="news-container">
+    <div class="title">
+      Update
+    </div>
+
+    <ul>
+      <li>
+        Welcome To PolyStudentia !
+      </li>
+
+      <li>
+        Introducing a Seamless User Integration Experience !
+      </li>
+
+      <li>
+        <b>Explore the our new menu performance manager</b>
+      </li>
+    </ul>
+  </div>
+  <br><br>
+  <h3 id="Welcome">Welcome To PolyStudentia !</h3><br>
+  <div class="main">
+
+    <div class="module" id="module1">
+      <h2> Add student</h2>
+      <img src="/images/addstudent.png" alt="Student Bus Information" width="300rem">
+      <p id="mod1info">Designed for the add the all data of new students, where you can add the studant details ex like
+        studant first name , middle name , last name , unique identification roll number and enrollment number , all
+        personal detais with documnents and addres of studants </p>
+      <input type="button" value="Use This!" id="mod1but">
+    </div>
+
+    <div class="module2" id="module2">
+      <h2>student performance checker</h2>
+      <img src="/images/studentperformance.png" alt="Student Payment Management" width="300rem">
+      <p id="mod2info">The Student Performance Management Module is a robust system for tracking and managing student
+        academic achievements. It enables the addition of detailed performance data, covering individual assessments,
+        grades, and project scores. The module provides a centralized hub for easy input and updating of student
+        information. With comprehensive reporting features, it offers insights into overall yearly and semester-wise
+        performance, aiding educators, parents, and students in identifying strengths and areas for improvement. </p>
+      <input type="button" value="Use This!" id="mod2but" onclick="openEnrollmentPopup()">
+    </div>
+    <div class="module3" id="module3">
+      <h2> Document Manager </h2>
+      <img src="/images/doc.jpeg" alt="Student Payment Management" width="300rem">
+      <p id="mod3info"> The module facilitates document management by allowing users to seamlessly add, organize, and
+        manage documents within a system. Users can easily upload, categorize, search, and access documents,
+        streamlining document-centric workflows. Additionally, it offers features for version control, collaboration,
+        and permissions management to ensure efficient document handling. With this module, businesses can enhance
+        productivity and organization while optimizing document-centric processes.</p>
+      <!-- Updated button -->
+      <input type="button" value="Use This!" id="mod3but" onclick="document1()">
+    </div>
+    <div class="module4" id="module4">
+      <h2>Stud Details Finder</h2>
+      <img src="/images/studentdetails.png" alt="Student Payment Management" width="300rem">
+      <p id="mod4info">The Student Details Finder Module is an efficient system designed for quick and accurate
+        retrieval of student information. Using the student enrollment number as a unique identifier, the module
+        provides a comprehensive display of personal details such as name, address, roll number, email, and relevant
+        documents. Additionally, it offers a detailed overview of academic performance, showcasing student achievements,
+        marks, and other pertinent data..</p>
+      <input type="button" value="Use This!" id="mod4but">
+    </div>
+  </div>
+  <hr>
+  <div class="footer">
+    <p>&copy; 2023-24 PolyStudentia. All rights reserved.<br>
+      -By Vedant Manoj Patil<!-- &#128540; -->
+    </p>
+  </div>
+
+  <!-- Add this inside your HTML body where you want the pop-up to appear -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <form id="enrollmentForm" action="/userfind" method="POST">
+
+        <label for="enrollmentNumber">Enter Enrollment Number:</label>
+        <input type="text" id="enrollmentNumber" name="enrollmentNumber">
+        <button type="submit" onclick="submitEnrollmentNumber()">Submit</button>
+      </form>
+
+
+    </div>
+  </div>
+
+
+  <div id="enrollmentPopup" class="popup">
+    <div class="popup-content">
+      <span class="close1" onclick="closeEnrollmentPopup()">&times;</span>
+      <h2>Enter Enrollment Number</h2>
+      <form id="enrollmentForm1" action="/userperfind" method="POST">
+        <label for="enrollmentNumber1">Enrollment Number:</label><br>
+        <input type="text" id="enrollmentNumber1" name="enrollmentNumber"><br><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openEnrollmentPopup() {
+      document.getElementById('enrollmentPopup').style.display = 'block';
+    }
+
+    function closeEnrollmentPopup() {
+      document.getElementById('enrollmentPopup').style.display = 'none';
+    }
+
+    // You can add form submission handling logic here
+  </script>
+
+</body>
+
+</html>
+
+
+
+
+
+<script src="/javascripts/studantmanagement/home.js"></script>
+
+
+
+
+
+
+<!-- <script src="/javascripts/documentmanagement/doc.js"></script> -->
+</body>
+
+</html>

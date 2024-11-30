@@ -1,0 +1,64 @@
+<!-- update.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Student Details</title>
+  <link rel="stylesheet" href="/stylesheets/update.css">
+</head>
+
+<body>
+
+  <div class="content">
+    <h2>Update Student Details</h2>
+
+    <% if(studentData) { %>
+      <form action="/update-submit" method="post">
+        <div class="form-group">
+          <label for="firstName">Enter Student First Name:</label>
+          <input type="text" id="firstName" name="firstName" value="<%= studentData.firstName %>" required>
+        </div>
+
+        <div class="form-group">
+          <label for="middleName">Enter Student Middle Name:</label>
+          <input type="text" id="middleName" name="middleName" value="<%= studentData.middleName %>">
+        </div>
+
+        <div class="form-group">
+          <label for="lastName">Enter Student Last Name:</label>
+          <input type="text" id="lastName" name="lastName" value="<%= studentData.lastName %>" required>
+        </div>
+
+        <div class="form-group">
+          <label for="rollNumber">Enter Roll Number:</label>
+          <input type="text" id="rollNumber" name="rollNumber" value="<%= studentData.rollNumber %>" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Enter Student Email:</label>
+          <input type="text" id="email" name="email" value="<%= studentData.email %>" required>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Enter Student Address:</label>
+          <textarea id="address" name="address" rows="4" required><%= studentData.address %></textarea>
+        </div>
+
+        <!-- Add other fields as needed -->
+
+        <input type="hidden" name="enrollmentNumber" value="<%= studentData.enrollmentNumber %>">
+        <button type="submit">Update Student</button>
+      </form>
+
+    <% } else { %>
+      <p class="error-message">No student data available for updating</p>
+    <% } %>
+
+  </div>
+
+</body>
+
+</html>

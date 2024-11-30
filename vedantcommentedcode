@@ -1,0 +1,164 @@
+
+    // // Configure multer to store files in a specific directory
+    // const storage1 = multer.diskStorage({
+    //   destination: function (req, file, cb) {
+    //     cb(null, 'uploads/');
+    //   },
+    //   filename: function (req, file, cb) {
+    //     const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    //     cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+    //   }
+    // });
+
+    // const upload1 = multer({ storage: storage });
+
+    // // Serve uploaded files statically (optional)
+    // app.use('/uploads', express.static('uploads'));
+
+    // // Your other middleware and routes...
+
+    // app.post('/submit', upload.fields([
+    //   { name: 'studantpassportphoto', maxCount: 1 },
+    //   { name: 'studantadhar', maxCount: 1 },
+    //   { name: 'fatheradhar', maxCount: 1 }
+    // ]), async (req, res) => {
+    //   try {
+    //     const { firstName, middleName, lastName, rollNumber, enrollmentNumber, email, address } = req.body;
+
+    //     // Check if files and specific fields are defined
+    //     if (req.files && req.files['studantpassportphoto'] && req.files['studantadhar'] && req.files['fatheradhar']) {
+    //       // Construct a new User document with file paths
+    //       const newUser = new userdata({
+    //         firstName,
+    //         middleName,
+    //         lastName,
+    //         rollNumber,
+    //         enrollmentNumber,
+    //         email,
+    //         address,
+    //         studantpassportphoto: '/uploads/' + req.files['studantpassportphoto'][0].filename,
+    //         studantadhar: '/uploads/' + req.files['studantadhar'][0].filename,
+    //         fatheradhar: '/uploads/' + req.files['fatheradhar'][0].filename
+    //       });
+
+    //       // Save the user to the database
+    //       await newUser.save();
+
+    //       // Redirect or send a response as needed
+    //       res.redirect('/success');
+    //     } else {
+    //       // Handle the case where files or specific fields are not defined
+    //       res.status(400).send('Bad Request: Missing files or fields.');
+    //     }
+    //   } catch (error) {
+    //     console.error(error);
+    //     res.status(500).send('Internal Server Error');
+    //   }
+    // });
+
+
+
+
+
+
+
+    // <!DOCTYPE html>
+    // <html lang="en">
+    // <head>
+    //     <meta charset="UTF-8">
+    //     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    //     <title>Document</title>
+    // </head>
+    // <body>
+    //     userperfind
+    //     <% if (typeof studentData !== 'undefined' && studentData) { %>
+    //         <div class="student-details">
+    //           <p><strong>Name:</strong> <%= studentData.firstName || '' %> <%= studentData.middleName || '' %> <%= studentData.lastName || '' %></p>
+    //           <p><strong>semester_1_marks:</strong> <%= studentData.semester_1_marks || '' %></p>
+    //           <p><strong>semester_2_marks:</strong> <%= studentData.semester_2_marks || '' %></p>
+    //           <p><strong>semester_3_marks:</strong> <%= studentData.semester_3_marks || '' %></p>
+    //           <p><strong>semester_4_marks:</strong> <%= studentData.semester_4_marks || '' %></p>
+    //           <p><strong>semester_5_marks:</strong> <%= studentData.semester_5_marks || '' %></p>
+    //           <p><strong>semester_6_marks:</strong> <%= studentData.semester_6_marks || '' %></p>
+             
+    //           <p><strong>year:</strong> <%= studentData.year || '' %></p>
+    //           <!-- Add more fields as needed -->
+    //         </div>
+    //     <% } %>
+    // </body>
+    // </html>
+
+
+
+
+
+
+
+
+
+
+    
+    // app.post('/submit', upload.fields([
+    //   { name: 'studantpassportphoto', maxCount: 1 },
+    //   { name: 'studantadhar', maxCount: 1 },
+    //   { name: 'fatheradhar', maxCount: 1 }
+    // ]), async (req, res) => {
+    //   try {
+    //     const { firstName, middleName, lastName, rollNumber, enrollmentNumber, email, address } = req.body;
+
+    //     // Check if files and specific fields are defined
+    //     if (req.files && req.files['studantpassportphoto'] && req.files['studantadhar'] && req.files['fatheradhar']) {
+    //       // Construct a new User document with file paths
+    //       const newUser = new userdata({
+    //         firstName,
+    //         middleName,
+    //         lastName,
+    //         rollNumber,
+    //         enrollmentNumber,
+    //         email,
+    //         address,
+    //         studantpassportphoto: req.files['studantpassportphoto'][0].path,
+    //         studantadhar: req.files['studantadhar'][0].path,
+    //         fatheradhar: req.files['fatheradhar'][0].path
+    //       });
+
+    //       // Save the user to the database
+    //       await newUser.save();
+
+    //       // Redirect or send a response as needed
+    //       res.redirect('/success');
+    //     } else {
+    //       // Handle the case where files or specific fields are not defined
+    //       res.status(400).send('Bad Request: Missing files or fields.');
+    //     }
+    //   } catch (error) {
+    //     console.error(error);
+    //     res.status(500).send('Internal Server Error');
+    //   }
+    // });
+
+    // app.post('/submit', (req, res) => {
+    //   console.log(req.body);   // Log form data
+    //   // console.log(req.files);  // Log uploaded files
+    //   // ... your route handler logic ...
+    // });
+
+
+
+    // app.post('/submit', async (req, res) => {
+    //   try {
+    //     await userdata.create({
+    //       firstName: req.body.firstName,
+    //       middleName: req.body.middleName,
+    //       lastName: req.body.lastName,
+    //       rollNumber: req.body.rollNumber,
+    //       enrollmentNumber: req.body.enrollmentNumber,
+    //       email: req.body.email,
+    //       address: req.body.address
+    //     });
+    //     res.redirect('/studantmanagement');
+    //     // alert("data added sucessfully")
+    //   } catch (e) {
+    //     console.log(e);
+    //   }
+    // });

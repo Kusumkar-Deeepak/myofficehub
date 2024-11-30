@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonafide and Recipt generator</title>
+    <link rel="icon" type="image/png" href="/images/logo-no-background.png">
+    <link rel="stylesheet" href="/stylesheets/bona.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: inline-block;
+            width: 150px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        select,
+        input[type="date"] {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="file"] {
+            width: 300px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 100px;
+        }
+        .popup-form {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.form-container {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="container">
+        <img src="/images/bona2.png" alt="Student Bus Information" width="70rem">
+        <a class="brand" href="">TechBonafide and Reciept Generator</a>
+        <div class="menu">
+            <div class="dropdown">
+                <button class="dropbtn" id="menuBtn">
+                    <img width="24" height="24" src="https://img.icons8.com/android/24/FFFFFF/menu.png" alt="menu"/>
+                </button>
+                <div class="dropdown-content" id="menuContent">
+                    <a href="/">Home</a>
+                    <!-- <a href="/documentation">Documentation</a> -->
+                    <!-- <a href="/login">Login</a>
+                    <a href="/signup">Signup</a>
+                    <a href="/update">Update User</a>
+                    <a href="/delete">Delete User</a>
+                    <a href="/feedback">Feedback</a>
+                    <b><a href="/reg" id="addUser" style="color: red;">Add User</a></b> -->
+                    <button class="close-btn" onclick="closeMenu()">Close</button>
+                    <!-- Add more dropdown items as needed -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="news-rushi">
+    <!-- <div class="title">
+        Update
+    </div> -->
+
+    <ul>
+        <li>
+            Welcome To TechBonafide and Reciept Generator!
+        </li>
+
+        <li>
+            Introducing a Seamless User Integration Experience ! 
+        </li>
+
+        <li>
+            <b>You can Generate Your Bonafide and reciept Here with adding some Information !</b>
+        </li>
+    </ul>
+</div>
+<br><br><h3 id="Welcome">Welcome To TechBonafide and Reciept Generator!</h3><br>
+
+<div class="main">
+
+    <div class="module" id="module1">
+        <h2 style="text-align: center;">Bonafide Manager</h2>
+        <img src="/images/bona2.png" alt="Student Bus Information" width="250rem">
+        <p id="mod1info">In This Bonafide Generator We Generate The College Student Bonafide Using There Information In This If User Enters His Information Like Name Photo Enrollment Number , Date Of Birth And Some Basic Information Of User And It Will Give Us A Bonafide In The Pdf Form. My College Office Server Simplifies The Process Of Generating Bonafide Certificates For Students Quickly Create, Customize, And Issue Bonafide Certificates, Ensuring Accuracy And Compliance With Institutional Policies.</p>
+        <input type="button" value="Use This!" id="mod1but" >
+    </div>
+
+    <div class="module" id="module1">
+        <h2 style="text-align: center;">Receipt Generator</h2>
+        <img src="/images/reci.jpg" alt="Student Bus Information" width="250rem">
+        <p id="mod1info">
+            A receipt generator is a tool or software program used to create receipts for transactions. It's commonly utilized by businesses, freelancers, and individuals to provide documentation of a purchase or payment.</p>
+        <input type="button" value="Use This!" id="openecpt" >
+    </div>
+
+</div>
+<hr>
+<div class="footer">
+    <p>&copy; 2023-24 TechBonafide. All rights reserved.<br>
+        -By Karlekar Rushikesh Sakharam <!-- &#128540; -->
+    </p>
+</div>
+<!-- Pop Up 1 -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <div class="close" onclick="closeModal()">&times;</div>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+        <div class="container">
+            <form action="/doc" method="post" id="inner">
+                <h3>CertificateBuilder Is Here ! <br> Fill Your Certificate Details</h3>
+
+                <div class="form-group">
+                    <label for="title">Title:</label>
+                    <select name="title" id="title" class="field1" required>
+                        <option value="">Select Title (Shri/Miss)</option>
+                        <option value="Shri">Shri</option>
+                        <option value="Miss">Miss</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input required type="text" name="name" id="name" placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="isWas">Is/Was:</label>
+                    <select name="isWas" id="isWas" class="field1" required>
+                        <option value="">Is/Was</option>
+                        <option value="Is">Is</option>
+                        <option value="Was">Was</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="semester">Semester:</label>
+                    <input required type="text" name="semester" id="semester" placeholder="Semester">
+                </div>
+
+                <div class="form-group">
+                    <label for="year">Year:</label>
+                    <input required type="text" name="year" id="year" placeholder="Year">
+                </div>
+
+                <div class="form-group">
+                    <label for="studentImage">Upload Photo:</label>
+                    <input type="file" name="studentImage" id="studentImage" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="hisHer">His/Her:</label>
+                    <select name="hisHer" id="hisHer" class="field1" required>
+                        <option value="">His/Her</option>
+                        <option value="His">His</option>
+                        <option value="Her">Her</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthdate">Birthdate:</label>
+                    <input required type="date" name="birthdate" id="birthdate">
+                </div>
+
+                <div class="form-group">
+                    <label for="course">Course:</label>
+                    <select name="course" id="course" class="field1">
+                        <option value="">Let's Choose Course (Branch)</option>
+                        <option value="Computer Engineering">Computer Engineering</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electrical Engineering">Electrical Engineering</option>
+                        <option value="Electronics & Telecommunication Engineering">Electronics & Telecommunication Engineering</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="acaYear">Academic Year:</label>
+                    <select name="acaYear" id="acaYear" class="field1">
+                        <option value="">Time To Choose Academic Year</option>
+                        <option value="2023-24">2023-24</option>
+                        <option value="2024-25">2024-25</option>
+                        <option value="2025-26">2025-26</option>
+                        <option value="2026-27">2026-27</option>
+                        <option value="2027-28">2027-28</option>
+                        <option value="2028-29">2028-29</option>
+                        <option value="2029-30">2029-30</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="issueDate">Issue Date:</label>
+                    <input required type="date" name="issueDate" id="issueDate">
+                </div>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div id="popup-form" class="popup-form">
+    <div class="form-container">
+        <span class="close" onclick="closeForm1()">&times;</span>
+        <h2>Enter Receipt Details</h2>
+        <form id="receiptForm" action="/res" method="POST">
+            <label for="fullName">Enter Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required><br> <br>
+
+            <label for="amount">Enter Amount:</label> <br>
+            <input type="number" id="amount" name="amount" required> <br> <br>
+
+            <label for="through">Through:</label> <br>
+            <input type="text" id="through" name="through" required><br> <br>
+
+            <label for="reason">Enter reason:</label>
+            <input type="text" id="amount" name="reason" required>
+
+            <input type="submit" value="Generate Receipt">
+        </form>
+    </div>
+</div>
+
+<!-- Include your JavaScript files -->
+<script src="/javascripts/busmanagement/home.js"></script>
+<script src="/javascripts/bon.js"></script>
+<!-- Your other scripts -->
+
+</body>
+</html>
